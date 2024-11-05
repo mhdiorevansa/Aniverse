@@ -8,20 +8,20 @@ export default function SearchListAnime() {
    const searchRef = useRef()
    const router = useRouter()
    const handleSearchEnter = (event) => {
-      if (event.key === "Enter") {
-         const keyword = searchRef.current.value;
-         if (keyword) {
-            router.push(`/search/${keyword}`);
-         }
-      }
-   }
-   const handleSearch = (event) => {
-      event.preventDefault();
-      const keyword = searchRef.current.value;
-      if (keyword) {
-         router.push(`/search/${keyword}`);
-      }
-   }
+			if (event.key === "Enter") {
+				const keyword = searchRef.current.value;
+				if (keyword && !keyword.trim() == "") {
+					router.push(`/search/${keyword}`);
+				}
+			}
+		};
+		const handleSearch = (event) => {
+			event.preventDefault();
+			const keyword = searchRef.current.value;
+			if (keyword && !keyword.trim() == "") {
+				router.push(`/search/${keyword}`);
+			}
+		};
    return (
       <div className="relative">
          <input

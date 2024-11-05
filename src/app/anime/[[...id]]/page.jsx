@@ -1,5 +1,5 @@
 import VideoPlayer from "@/components/video-player";
-import getAnimeResponse from "@/libs/api-libs";
+import { getAnimeResponse } from "@/libs/api-libs";
 import Image from "next/image";
 
 export default async function DetailAnime({ params: { id } }) {
@@ -37,9 +37,9 @@ export default async function DetailAnime({ params: { id } }) {
 				<Image
 					src={detailAnime.data.images.webp.large_image_url}
 					alt={detailAnime.data.images.jpg.large_image_url}
-					width={340}
-					height={340}
-					className="w-full md:w-[340px] md:h-[340px] rounded"
+					width={360}
+					height={300}
+					className="w-full md:w-[360px] md:h-[300px] rounded"
 				/>
 				<p className="text-justify">{detailAnime.data.synopsis}</p>
 			</div>

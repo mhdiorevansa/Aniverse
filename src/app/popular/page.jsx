@@ -3,7 +3,7 @@
 import HeaderMenu from "@/components/header-menu";
 import ListAnime from "@/components/list-anime";
 import Pagination from "@/components/pagination";
-import getAnimeResponse from "@/libs/api-libs";
+import { getAnimeResponse } from "@/libs/api-libs";
 import { useEffect, useState } from "react";
 
 export default function PopularPage() {
@@ -18,6 +18,7 @@ export default function PopularPage() {
 			setTopAnime(popularAnime);
 		};
 		fetchData();
+		// array page merupakan, datanya akan dijalankan lagi saat page nya berubah
 	}, [page]);
 
 	return (
