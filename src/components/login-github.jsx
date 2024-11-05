@@ -5,6 +5,8 @@ export default async function LoginGithub() {
 	const userAuth = await authUserSession();
 	const buttonLabel = userAuth ? "Sign Out" : "Sign In";
 	const linkButton = userAuth ? "/api/auth/signout" : "/api/auth/signin";
+	// gunakan ini jika ingin di redirect kemana setelah aksi berhasil
+	// "/api/auth/signin?callbackUrl=/users/dashboard";
 	return (
 		<div className="flex gap-3">
 			{userAuth ? (
